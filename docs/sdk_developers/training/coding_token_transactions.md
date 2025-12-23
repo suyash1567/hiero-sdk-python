@@ -64,6 +64,20 @@ def set_account_id(self, account_id: AccountId) -> "TokenAssociateTransaction":
     return self
 
 ```
+This feature enables chaining.
+
+For example:
+
+# Standard Usage
+tx.set_account_id(account_id)
+tx.set_token_id(token_id)
+tx.freeze()
+tx.execute(client)
+
+or
+
+# Method Chaining
+tx.set_account_id(account_id).set_token_id(token_id).freeze().execute(client)
 
 ## 4. Protobuf Conversion
 
